@@ -8,9 +8,9 @@ const LyricSchema = new Schema({
   },
   likes: { type: Number, default: 0 },
   content: { type: String }
-});
+}, { usePushEach: true });
 
-LyricSchema.statics.like = function(id) {
+LyricSchema.statics.like = function (id) {
   const Lyric = mongoose.model('lyric');
 
   return Lyric.findById(id)
